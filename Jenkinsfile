@@ -2,6 +2,7 @@ pipeline {
     agent any
     environment {
         IMAGE_NAME = "user-registration-app"
+        CONTAINER_NAME = "user-registration-container"
     }
     stages {
         stage('Clone Repo') {
@@ -12,21 +13,17 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t $IMAGE_NAME .'
+                bat 'docker build -t %IMAGE_NAME% .'
             }
         }
 
         stage('Run Container') {
             steps {
                 // Stop old container if running
-                sh 'docker rm -f $IMAGE_NAME || true'
+                bat 'docker rm -f %CONTAINER_NAME% || echo Container not found'
+
                 // Run new container
-                sh '''
-                docker run -d \
-                    --name $IMAGE_NAME \
-                    -p 8081:80 \
-                    $IMAGE_NAME
-                '''
+                bat "docker run -d -p 8081:80 --name %CONTAINER_NAME% %IMAGE_NAME%"
             }
         }
     }
