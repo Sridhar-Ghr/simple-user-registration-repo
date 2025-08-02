@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Clone Repo') {
             steps {
-                git branch main'https://github.com/Sridhar-Ghr/simple-user-registration-repo.git'
+                git branch: 'main', url: 'https://github.com/Sridhar-Ghr/simple-user-registration-repo.git'
             }
         }
 
