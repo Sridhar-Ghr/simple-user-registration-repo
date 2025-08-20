@@ -2,9 +2,22 @@
 <html>
     <head>
         <title>USER REGISTRATION</title>
+        <style>
+            .summary {
+            margin-top: 100px;
+            margin-left: 300px;
+            margin-right: 1000px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px rgba(50,0,0,50);
+        }
+        </style>
     </head>
     <body>
-        <h1>Enter your details for registration</h1>
+        <div class="summary">
+        <h1>Enter your details for event registration</h1>
         <form method="get" action="./Submit.html">
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required><br><br>
@@ -26,5 +39,6 @@
         </select><br><br>
         <input type="submit" value="Submit">
         </form>
+        </div>
     </body>
 </html>
