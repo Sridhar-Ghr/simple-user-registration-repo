@@ -1,17 +1,20 @@
 <!-- User registration form -->
-<html>
+<!DOCTYPE html>
+    
     <head>
+        <meta charset="UTF-8">
+
         <title>USER REGISTRATION</title>
-   
+           
     </head>
     <body>
         <div>
-        <h1>Enter your details for event registration</h1>
-        <form method="get" action="./Submit.html">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required><br><br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required><br><br>
+        <h1>Enter your details for job event registration</h1>    
+        <form method="post" action="./Submit.html" onsubmit="return validateUserInput()">
+        <label for="studentname">Student Name:</label>
+        <input type="text" id="studentname" name="studentname" required><br><br>
+        <label for="studentid">Student ID:</label>
+        <input type="text" id="studentid" name="studentid" required><br><br>
         <label>Skills:</label><br>
         <input type="checkbox" name="skills" value="C"> C<br>
         <input type="checkbox" name="skills" value="C++"> C++<br>
@@ -30,5 +33,6 @@
         <input type="submit" value="Submit">
         </form>
         </div>
+        <script src="tests.js"></script>
     </body>
 </html>
