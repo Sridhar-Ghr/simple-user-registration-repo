@@ -1,5 +1,5 @@
 # Use official nginx image as base
-FROM nginx:stable
+FROM nginx:latest
 
 # Copy your custom nginx.conf to override default config
 COPY nginx.conf /etc/nginx/nginx.conf
